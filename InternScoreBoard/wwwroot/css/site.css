@@ -1,6 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -53,4 +53,120 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
+  background: #333;
+  text-align: center;
+  color: #fff !important;
 }
+.footer a { color: #e79621;}
+/*Individual scoreboard design css*/
+* { font-family: "Montserrat", sans-serif; }
+
+.course-name-header { background: #fbfbfb; color: #000;padding: 5px; text-align: center;  border: 1px solid #e79621; }
+#cleanAccordionMain { background: #fff; max-width: 100%; border: 1px solid #e79621; margin: 0 auto; padding: 0; }
+#cleanAccordionMain .accordion .selected i { transform: rotate(180deg); }
+#cleanAccordionMain * { margin: 0; padding: 0; }
+#cleanAccordionMain span.inactive { display: inline-block; background: #CD3333; text-align: center; padding: 2px 0; border-radius: 2px; width: 60px; font-size: 11px; color: #fff; }
+#cleanAccordionMain dl.accordion { overflow: hidden; }
+#cleanAccordionMain dl.accordion:hover * { cursor: default; }
+#cleanAccordionMain dl.accordion:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+#cleanAccordionMain dl.accordion dt { padding: 0; margin: 0; background-color: transparent; overflow: hidden; margin-bottom: 0px; position: relative; }
+#cleanAccordionMain dl.accordion dt.accordionLastDt { margin-bottom: none; }
+#cleanAccordionMain dl.accordion dt a { color: #fff; text-decoration: none;text-align: left; display: block; font-weight: bold; padding: 20px 15.3846153846px; }
+#cleanAccordionMain dl.accordion dt a:hover, #cleanAccordionMain dl.accordion dt a:hover * { cursor: pointer; }
+#cleanAccordionMain dl.accordion dt a:focus { outline: none; }
+#cleanAccordionMain dl.accordion dt.tab_1 a { background-color: #e79621; }
+#cleanAccordionMain dl.accordion dt.tab_1 a i, #cleanAccordionMain dl.accordion dt.tab_1 a span { background-color: #b77414; }
+#cleanAccordionMain dl.accordion dt.tab_2 a { background-color: #f0c312; }
+#cleanAccordionMain dl.accordion dt.tab_2 a i, #cleanAccordionMain dl.accordion dt.tab_2 a span { background-color: #b9960c; }
+#cleanAccordionMain dl.accordion dt.tab_3 a { background-color: #3b97d6; }
+#cleanAccordionMain dl.accordion dt.tab_3 a i, #cleanAccordionMain dl.accordion dt.tab_3 a span { background-color: #2577af; }
+#cleanAccordionMain dl.accordion dt.tab_4 a { background-color: #4fb66f; }
+#cleanAccordionMain dl.accordion dt.tab_4 a i, #cleanAccordionMain dl.accordion dt.tab_4 a span { background-color: #3b8d54; }
+#cleanAccordionMain dl.accordion dt i { font-size: 24.6px; margin: 0; /* float: left; */ padding: 0; border-radius: 4px; font-style: normal; margin-right: 15px; line-height: 1; }
+#cleanAccordionMain dl.accordion dt i.fa { padding: 4px 5px; }
+#cleanAccordionMain dl.accordion dt h4 { font-size: 24px; display: inline-block; vertical-align: middle; padding-left: 10px; }
+#cleanAccordionMain dl.accordion dt p.details { float: right; font-family: arial, sans-serif; padding: -4px 12px 8px 12px; position: relative; margin-top: 5px; }
+#cleanAccordionMain dl.accordion dt p.details:hover { cursor: pointer; }
+#cleanAccordionMain dl.accordion dt p.details span { background: none; float: right; padding: 0; margin-right: 0; margin-left: 20px; }
+#cleanAccordionMain dl.accordion dt p.details span.inactive { position: absolute; left: -80px; top: 6.6666666667px; background: #CD3333; }
+#cleanAccordionMain dl.accordion dd { padding: 0; margin: 0; padding: 10px 15px 10px 10px; text-indent: none; background-color: transparent; color: #333333; }
+#cleanAccordionMain dl.accordion dd.accordionLastDd { position: relative; border-bottom: 0; }
+#cleanAccordionMain dl.accordion dd p { font-size: 14px; padding: 8px 0; }
+#cleanAccordionMain dl.accordion dd p a { float: right; color: #0e72b6; text-decoration: none; }
+#cleanAccordionMain dl.accordion dd p a i { margin-left: 15px; }
+#cleanAccordionMain dl.accordion dd p a:hover { text-decoration: underline; cursor: pointer; }
+#cleanAccordionMain dl.accordion dd p a:hover i { text-decoration: none; cursor: pointer; }
+
+
+
+
+/*scroeboard table css*/ 
+.costum-table-dark .table th { padding: 15px 10px !important;text-transform: capitalize; background-color: #212121; color: #e79621; border-top: 0 !important; border-bottom: 2px solid #505050 !important; font-size: 15px !important; }
+.costum-table-dark .table tr:hover { background-color: #3A3A3A; }
+.costum-table-dark .table { background: #434242; color: #FFF; }
+.costum-table-dark { border: 0; }
+.costum-table-dark .table >
+tbody >
+tr >
+td,
+.costum-table-dark .table >
+tbody >
+tr >
+th,
+.costum-table-dark .table >
+tfoot >
+tr >
+td,
+.costum-table-dark .table >
+tfoot >
+tr >
+th,
+.costum-table-dark .table >
+thead >
+tr >
+td,
+.costum-table-dark .table >
+thead >
+tr >
+th { border-top: 1px solid #505050; text-align: left; padding: 15px 10px !important; }
+/*back button design css*/
+.app-back-button { margin-top: 20px; background: #fff; color: #e79621;}
+.app-back-button i { 
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.btn { background: #fff; color: #e79621; border-color: #e79621; }
+.btn:hover { background: #e79621; color: #fff; border-color: #e79621; }
+
+/*navbar item-link css*/
+.navbar-expand-sm .navbar-nav .nav-link { color: #e79621 ; font-weight: 600;}
+.ranking { 
+    font-size: 14px;
+    padding: 5px 8px !important;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus { box-shadow: none; background: #e79621; color: #fff; border-color: #e79621; }
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: none;
+}
+.costum-table-dark .table td { 
+    font-size: 14px;
+}
+.costum-table-dark .table td:first-child { text-transform: capitalize; }
+.overall-report .table td:nth-child(2) { 
+    text-transform: capitalize;
+}
+/*Responsive css*/
+@media (min-width: 450px) { h1 .heading { font-size: 1.55em; }
+}
+@media (min-width: 576px) {
+    .flex-sm-row-reverse { -ms-flex-direction: row-reverse !important; flex-direction: column !important; }
+}
+@media (min-width: 760px) {
+    h1.heading { font-size: 3.05em; }
+}
+
+@media (min-width: 900px) {
+    h1.heading { font-size: 3.25em; margin: 0 0 0.3em; }
+}
+ 
