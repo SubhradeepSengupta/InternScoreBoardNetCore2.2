@@ -62,7 +62,8 @@ body {
 * { font-family: "Montserrat", sans-serif; }
 
 .course-name-header { background: #fbfbfb; color: #000;padding: 5px; text-align: center;  border: 1px solid #e79621; }
-#cleanAccordionMain { background: #fff; max-width: 100%; border: 1px solid #e79621; margin: 0 auto; padding: 0; }
+#cleanAccordionMain { background: #fff; max-width: 100%; border: 1px solid #e79621; margin: 0 auto; padding: 0;margin-bottom: 30px; }
+
 #cleanAccordionMain .accordion .selected i { transform: rotate(180deg); }
 #cleanAccordionMain * { margin: 0; padding: 0; }
 #cleanAccordionMain span.inactive { display: inline-block; background: #CD3333; text-align: center; padding: 2px 0; border-radius: 2px; width: 60px; font-size: 11px; color: #fff; }
@@ -74,20 +75,24 @@ body {
 #cleanAccordionMain dl.accordion dt a { color: #fff; text-decoration: none;text-align: left; display: block; font-weight: bold; padding: 20px 15.3846153846px; }
 #cleanAccordionMain dl.accordion dt a:hover, #cleanAccordionMain dl.accordion dt a:hover * { cursor: pointer; }
 #cleanAccordionMain dl.accordion dt a:focus { outline: none; }
-#cleanAccordionMain dl.accordion dt.tab_1 a { background-color: #e79621; }
-#cleanAccordionMain dl.accordion dt.tab_1 a i, #cleanAccordionMain dl.accordion dt.tab_1 a span { background-color: #b77414; }
-#cleanAccordionMain dl.accordion dt.tab_2 a { background-color: #f0c312; }
-#cleanAccordionMain dl.accordion dt.tab_2 a i, #cleanAccordionMain dl.accordion dt.tab_2 a span { background-color: #b9960c; }
-#cleanAccordionMain dl.accordion dt.tab_3 a { background-color: #3b97d6; }
-#cleanAccordionMain dl.accordion dt.tab_3 a i, #cleanAccordionMain dl.accordion dt.tab_3 a span { background-color: #2577af; }
-#cleanAccordionMain dl.accordion dt.tab_4 a { background-color: #4fb66f; }
-#cleanAccordionMain dl.accordion dt.tab_4 a i, #cleanAccordionMain dl.accordion dt.tab_4 a span { background-color: #3b8d54; }
+#cleanAccordionMain:nth-child(odd) { border: 1px solid #e79621; }
+#cleanAccordionMain:nth-child(odd) .ranking { background: #3b97d6; }
+#cleanAccordionMain:nth-child(even) { border: 1px solid #3b97d6; }
+#cleanAccordionMain:nth-child(even) .ranking { background: #e79621; }
+#cleanAccordionMain:nth-child(odd) dl.accordion dt.tab_1 a { background-color: #e79621; }
+#cleanAccordionMain:nth-child(odd) dl.accordion dt.tab_1 a i, #cleanAccordionMain:nth-child(1) dl.accordion dt.tab_1 a span { background-color: #b77414; }
+/*#cleanAccordionMain:nth-child(even) dl.accordion dt.tab_1 a { background-color: #f0c312; }*/
+/*#cleanAccordionMain:nth-child(even) dl.accordion dt.tab_1 a i, #cleanAccordionMain:nth-child(2) dl.accordion dt.tab_1 a span { background-color: #b9960c; }*/
+#cleanAccordionMain:nth-child(even) dl.accordion dt.tab_1 a { background-color: #3b97d6; }
+#cleanAccordionMain:nth-child(even) dl.accordion dt.tab_1 a i, #cleanAccordionMain:nth-child(3) dl.accordion dt.tab_1 a span { background-color: #2577af; }
+/*#cleanAccordionMain:nth-child(even) dl.accordion dt.tab_1 a { background-color: #4fb66f; }*/
+/*#cleanAccordionMain:nth-child(even) dl.accordion dt.tab_1 a i, #cleanAccordionMain:nth-child(4) dl.accordion dt.tab_1 a span { background-color: #3b8d54; }*/
 #cleanAccordionMain dl.accordion dt i { font-size: 24.6px; margin: 0; /* float: left; */ padding: 0; border-radius: 4px; font-style: normal; margin-right: 15px; line-height: 1; }
 #cleanAccordionMain dl.accordion dt i.fa { padding: 4px 5px; }
 #cleanAccordionMain dl.accordion dt h4 { font-size: 24px; display: inline-block; vertical-align: middle; padding-left: 10px; }
 #cleanAccordionMain dl.accordion dt p.details { float: right; font-family: arial, sans-serif; padding: -4px 12px 8px 12px; position: relative; margin-top: 5px; }
 #cleanAccordionMain dl.accordion dt p.details:hover { cursor: pointer; }
-#cleanAccordionMain dl.accordion dt p.details span { background: none; float: right; padding: 0; margin-right: 0; margin-left: 20px; }
+#cleanAccordionMain dl.accordion dt p.details span { background: none;width: 20px;height: 20px; float: right; padding: 0; margin-right: 0; }
 #cleanAccordionMain dl.accordion dt p.details span.inactive { position: absolute; left: -80px; top: 6.6666666667px; background: #CD3333; }
 #cleanAccordionMain dl.accordion dd { padding: 0; margin: 0; padding: 10px 15px 10px 10px; text-indent: none; background-color: transparent; color: #333333; }
 #cleanAccordionMain dl.accordion dd.accordionLastDd { position: relative; border-bottom: 0; }
@@ -101,6 +106,10 @@ body {
 
 
 /*scroeboard table css*/ 
+.table-responsive {
+    white-space: nowrap;
+
+}
 .costum-table-dark .table th { padding: 15px 10px !important;text-transform: capitalize; background-color: #212121; color: #e79621; border-top: 0 !important; border-bottom: 2px solid #505050 !important; font-size: 15px !important; }
 .costum-table-dark .table tr:hover { background-color: #3A3A3A; }
 .costum-table-dark .table { background: #434242; color: #FFF; }
@@ -152,10 +161,49 @@ th { border-top: 1px solid #505050; text-align: left; padding: 15px 10px !import
 .costum-table-dark .table td { 
     font-size: 14px;
 }
+.costum-table-dark .table td:last-child { 
+    text-align: right;
+}
 .costum-table-dark .table td:first-child { text-transform: capitalize; }
 .overall-report .table td:nth-child(2) { 
     text-transform: capitalize;
 }
+@media(max-width: 1920px) {
+    .container { max-width: 1800px; }
+}
+@media(max-width: 1800px) {
+    .container { max-width: 1600px; }
+}
+@media(max-width: 1600px) {
+    .container { max-width: 1440px; }
+}
+
+@media(max-width: 1440px) {
+    .container { max-width: 1366px; }
+}
+
+@media(max-width: 1367px) {
+    .container { max-width: 1200px; }
+}
+
+@media(max-width: 1200px) {
+    .container { max-width: 1024px; }
+}
+
+@media(max-width: 1024px) {
+    .container { max-width: 720px; }
+}
+@media(max-width: 768px) {
+    .container { max-width: 620px; }
+    #cleanAccordionMain dl.accordion dt h4 {
+        font-size: 18px;
+    }
+}
+@media(max-width: 640px) {
+    .container { max-width: 90%; }
+    #cleanAccordionMain dl.accordion dt h4 { font-size: 14px; width: 75%; }
+}
+
 /*Responsive css*/
 @media (min-width: 450px) { h1 .heading { font-size: 1.55em; }
 }
