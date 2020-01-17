@@ -3,37 +3,78 @@
     ViewData["Title"] = "IndividualReport";
 }
 
-    <div class="jumbotron align-items-center" style="text-align: center">
+<div class="align-items-center" style="text-align: center">
 
-        @foreach (var course in Model)
-        {
-            <table border="1" width="100%" cellpadding="15" style="margin-bottom: 3%">
-                <thead>
-                    <tr>
-                        <th colspan="@course.ColumnNames.Count">Course Name : @course.CourseName</th>
-                    </tr>
-                    <tr>
-                        @foreach (var column in course.ColumnNames)
-                        {
-                            <th>@column</th>
-                        }
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var internStudent in course.InternNameAndScores)
-                    {
-                        <tr>
-                            @foreach (var item in internStudent)
-                            {
-                                <td>
-                                    @item
-                                </td>
-                            }
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        }
-        <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">Back</a>
-    </div>
+    @foreach( var course in Model )
+    {
+
+        <div id="cleanAccordionMain" class="cleanAccordion">
+            <dl class="accordion">
+                <dt class="tab_1 singleTab">
+                    <a href="" class="accordionSlide">
+                        <div class="accordionContent">
+                            <span class="ranking">1</span>
+
+                            @*bind student name here*@
+                            <h4> Course Name : @course.CourseName</h4>
+                            <p class="details">
+                                <span class="rotate-it">
+                                    <i class="material-icons">
+                                        keyboard_arrow_down
+                                    </i>
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                </dt>
+                <dd>
+                    <section class="wrapper">
+                        <div class="container">
+                            <div class="content">
+                               
+                                        <div class="table-responsive costum-table-dark">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        @*<th colspan="@course.ColumnNames.Count"</th>*@
+                                                    </tr>
+                                                    <tr>
+                                                        @foreach( var column in course.ColumnNames )
+                                                        {
+                                                            <th>@column</th>
+                                                        }
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach( var internStudent in course.InternNameAndScores )
+                                                    {
+                                                        <tr>
+                                                            @foreach( var item in internStudent )
+                                                            {
+                                                                <td>
+                                                                    @item
+                                                                </td>
+                                                            }
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                  
+                            </div>
+                        </div>
+                    </section>
+                </dd>
+            </dl>
+        </div>
+        @*<table border="1" width="100%" cellpadding="15" style="margin-bottom: 3%">
+           
+        </table>*@
+    }
+    <a class="btn btn-primary app-back-button" asp-area="" asp-controller="Home" asp-action="Index"><i class="material-icons">
+    keyboard_backspace
+</i> Back</a>
+</div>
 

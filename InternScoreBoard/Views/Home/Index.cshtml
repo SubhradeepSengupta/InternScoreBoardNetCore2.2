@@ -2,13 +2,15 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    
 </head>
 <body>
-    <div class="jumbotron align-items-center" style="text-align: center">
-        @if (Model == null)
+
+    <div class="align-items-center" style="text-align: center">
+        @if( Model == null )
         {
             {
-                @using (Html.BeginForm("UploadData", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                @using( Html.BeginForm("UploadData", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }) )
                 {
                     <label>Select File:</label>
                     <input type="file" name="uploadedFiles" multiple="multiple" />
@@ -22,48 +24,54 @@
         }
         else
         {
-            <table border="1" width="100%" cellpadding="15" style="margin-bottom: 3%">
-                <thead>
-                    <tr style="font-weight: bold">
-                        <td>Rank</td>
-                        <td>Intern Name</td>
-                        <td>Email</td>
-                        <td colspan="@ViewData["CourseColumnCount"]">Course Name/Total Percentage</td>
-                        <td>Overall Percentage</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @{ int rank = 1; }
-                    @foreach (var intern in Model)
-                    {
-                        <tr>
-                            <td>@rank</td>
-                            <td>
-                                @intern.InternName
-                            </td>
-                            <td>
-                                @intern.Email
-                            </td>
-                            @for (int i = 0; i < intern.Courses.Count; i++)
-                            {
-                                <td>
-                                    @intern.Courses[i].CourseName
-                                </td>
-                                <td>
-                                    @intern.Courses[i].Percentage
-                                </td>
-                            }
-                            <td>
-                                @intern.AllOverScore
-                            </td>
-                        </tr>
 
-                        rank++;
-                    }
-                </tbody>
-            </table>
-            <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">Back</a>
-        }
-    </div>
+            <div class="table-responsive costum-table-dark overall-report">
+                <table class="table">
+                    <thead>
+                        <tr style="font-weight: bold">
+                            <th>Rank</th>
+                            <th>Intern Name</th>
+                            <th>Email</th>
+                            <th colspan="@ViewData["CourseColumnCount"]">Course Name/Total Percentage</th>
+                            <th>Overall Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ int rank = 1; }
+                        @foreach( var intern in Model )
+                        {
+                            <tr>
+                                <td>@rank</td>
+                                <td class="intern-name">
+                                    @intern.InternName
+                                </td>
+                                <td>
+                                    @intern.Email
+                                </td>
+                                @for( int i = 0; i < intern.Courses.Count; i++ )
+                                {
+                                    <td>
+                                        @intern.Courses[i].CourseName
+                                    </td>
+                                    <td>
+                                        @intern.Courses[i].Percentage
+                                    </td>
+                                }
+                                <td>
+                                    @intern.AllOverScore
+                                </td>
+                            </tr>
+
+                            rank++;
+                        }
+                    </tbody>
+                </table>
+                </div>
+                <a class="btn btn-primary app-back-button" asp-area="" asp-controller="Home" asp-action="Index"><i class="material-icons">
+    keyboard_backspace
+</i>Back</a>
+                }
+            </div>
+
 </body>
 </html>
